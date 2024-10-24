@@ -1,6 +1,3 @@
-Here's a structured README for your Spring Boot Rule Engine application with AST:
-
----
 
 # Rule Engine with Abstract Syntax Tree (AST)
 
