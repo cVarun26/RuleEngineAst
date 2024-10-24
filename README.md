@@ -6,11 +6,11 @@ Here's a structured README for your Spring Boot Rule Engine application with AST
 
 ## Overview
 
-This project is a **3-tier Rule Engine** application developed using **Spring Boot (Java)** for the backend, **MySQL** for data storage, and **React** for the frontend. The application determines user eligibility based on attributes such as age, department, income, and spend. It dynamically creates, combines, and evaluates conditional rules using an **Abstract Syntax Tree (AST)**.
+This project is a **3-tier Rule Engine** application developed using **Spring Boot (Java)** for the backend, **MySQL** for data storage, and **React.js** for the frontend. The application determines user eligibility based on attributes such as age, department, income, and spend. It dynamically creates, combines, and evaluates conditional rules using an **Abstract Syntax Tree (AST)**.
 
 ## Objectives
 
-- Develop a system to represent and evaluate dynamic conditional rules using AST.
+- To develop a system to represent and evaluate dynamic conditional rules using AST.
 - Allow for the creation, modification, and combination of rules in real time.
 - Store the rules and associated metadata in a relational database (MySQL).
 - Provide a simple UI (built with React) for interacting with the rule engine.
@@ -28,13 +28,13 @@ This project is a **3-tier Rule Engine** application developed using **Spring Bo
 
 The application is organized into three main layers:
 
-1. **Frontend (React)**: Simple UI for rule creation and visualization.
+1. **Frontend (React.js)**: Simple UI for rule creation and visualization.
 2. **Backend (Spring Boot)**: API services to handle rule creation, combination, and evaluation.
 3. **Data (MySQL)**: Storage of rules and application metadata.
 
 ### Technologies Used
 
-- **Frontend**: React
+- **Frontend**: React.js
 - **Backend**: Spring Boot, Java, IntelliJ IDEA
 - **Database**: MySQL
 
@@ -69,29 +69,6 @@ This structure supports dynamic creation and modification of rules.
    ```
    (age > 30 AND department = 'Marketing') AND (salary > 20000 OR experience > 5)
    ```
-
----
-
-## Data Storage
-
-### Database: MySQL
-
-The application uses MySQL to store rules and metadata. Below is an example schema for the rule storage:
-
-### Table: `rules`
-
-| Field      | Type   | Description                                      |
-|------------|--------|--------------------------------------------------|
-| id         | INT    | Primary key, auto-increment                      |
-| rule       | TEXT   | The rule string                                  |
-| ast        | JSON   | Serialized AST representing the rule             |
-| created_at | DATETIME | Timestamp of when the rule was created          |
-
-### Sample Database Record
-
-| id | rule | ast | created_at |
-|----|------|-----|------------|
-| 1  | "age > 30 AND salary > 50000" | { "type": "AND", "left": { "type": "operand", "value": "age > 30" }, "right": { "type": "operand", "value": "salary > 50000" }} | 2024-10-23 12:34:56 |
 
 ---
 
@@ -150,24 +127,6 @@ The application exposes the following API endpoints:
   ```
 - **Response**: Returns a boolean (`true` if the user meets the rule, `false` otherwise).
 
----
-
-## Test Cases
-
-1. **Create Rule**:
-   - Use `create_rule` to create an AST from the rule string `"age > 30 AND department = 'Sales'"`.
-   - Verify that the AST accurately represents the rule.
-   
-2. **Combine Rules**:
-   - Combine multiple rules such as `"age > 30 AND department = 'Sales'"` and `"salary > 50000 OR experience > 5"`.
-   - Ensure that the combined AST correctly reflects the logic.
-
-3. **Evaluate Rule**:
-   - Test the evaluation function with different sets of user data and rules.
-   - Example data: `{"age": 35, "department": "Sales", "salary": 60000, "experience": 3}`.
-
----
-
 ## Setup and Installation
 
 ### Prerequisites
@@ -196,7 +155,7 @@ The application exposes the following API endpoints:
    ./mvnw spring-boot:run
    ```
 
-### Frontend (React)
+### Frontend (React.js)
 
 1. Navigate to the frontend directory:
    ```bash
