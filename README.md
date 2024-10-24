@@ -164,27 +164,4 @@ The application exposes the following API endpoints:
    npm install
    npm start
    ```
-
----
-
-## Future Enhancements
-
-- **UI Improvements**: Expand the user interface for better rule visualization.
-- **Optimization**: Implement further optimizations for combining large numbers of rules.
-- **Additional Data Sources**: Integrate additional data sources for rule evaluation.
-  
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Contributors
-
-- **[Your Name]** - Developer
-
----
-
-This README gives an overview of your Spring Boot Rule Engine application, explaining its structure, features, setup, and testing guidelines. Let me know if you need any adjustments!
+### MAKE SURE TO RUN THE BACKEND WHILE RUNNING THE REACT APP
