@@ -37,6 +37,31 @@ The application is organized into three main layers:
 
 ---
 
+## Design Choices
+
+### Backend
+
+- **Framework**: The backend uses **Spring Boot** for its simplicity in building RESTful APIs, ideal for the rule engine system.
+  
+- **Data Representation**:
+  - Rules are represented using an **Abstract Syntax Tree (AST)**, allowing for dynamic creation, modification, and evaluation.
+  - The AST consists of **Node** objects with fields like:
+    - `type`: Defines whether the node is an operator (AND/OR) or operand (condition).
+    - `left` and `right`: Child nodes for operators.
+    - `value`: Holds the condition value for operand nodes.
+
+- **API Design**:
+  - **`create_rule(rule_string)`**: Converts a rule string into an AST.
+  - **`combine_rules(rules)`**: Combines multiple rules into one AST.
+  - **`evaluate_rule(data)`**: Evaluates the rule against user data (JSON) to determine eligibility.
+
+- **Testing**: Unit tests using **JUnit** and **Mockito** validate rule creation, combination, and evaluation logic.
+
+### Frontend
+
+- **Framework**: **React.js** is used for the frontend, allowing a simple, interactive UI for rule creation and management.
+- **Interactivity**: Users can define rules and see real-time evaluations through the UI, which sends requests to the backend for processing.
+
 ## Data Structure
 
 The Abstract Syntax Tree (AST) is the core structure representing conditional rules in the application.
