@@ -32,7 +32,7 @@ The application is organized into three main layers:
 ### Technologies Used
 
 - **Frontend**: React.js
-- **Backend**: Spring Boot, Java, IntelliJ IDEA
+- **Backend**: Spring Boot, Java
 - **Database**: MySQL
 
 ---
